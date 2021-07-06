@@ -76,8 +76,8 @@ public class membertab extends AppCompatActivity{
     String selectedDay;
     ImageButton imageButton1,imageButton2,imageButton3;
     final CharSequence[] dialogitem={"카메라로 찍기","갤러리에서 사진 가져오기"};
-//    Boolean calendar_state;
-//    EditText weighttext,fattext,muscletext;
+    Boolean calendar_state;
+    EditText weighttext,fattext,muscletext;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -124,8 +124,7 @@ public class membertab extends AppCompatActivity{
             case 3:
 
                 view = inflater.inflate(R.layout.list,frameLayout,false);
-//                DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
-//                reference.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child();
+                DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
                 MaterialCalendarView calendarView=view.findViewById(R.id.calendar);
                 calendarView.state().edit()
                         .setFirstDayOfWeek(DayOfWeek.SUNDAY)
@@ -194,7 +193,7 @@ public class membertab extends AppCompatActivity{
         if(resultcode== Activity.RESULT_OK) {
             switch (RequestCode) {
                 case 200:
-//                    DatabaseReference mUri = FirebaseDatabase.getInstance().getReference().child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("foodPhotoe").child(selectedDay).child("1");
+//                    DatabaseReference mUri = FirebaseDatabase.getInstance().getReference().child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("foodPhoto").child(selectedDay).child("1");
 //                    loadImageTask imageTask = new loadImageTask(mUri.toString());
 //                    imageButton1.setImageBitmap(imageTask.doInBackground());
                     break;
